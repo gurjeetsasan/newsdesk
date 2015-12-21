@@ -1,7 +1,10 @@
 <script src="<?php echo base_url(); ?>template/js/jquery-1.11.1.min.js"></script>
 <script src="<?php echo base_url(); ?>template/js/bootstrap.min.js"></script>
+<script src="<?php echo base_url(); ?>template/js/chart.min.js"></script>
+<script src="<?php echo base_url(); ?>template/js/chart-data.js"></script>
+<script src="<?php echo base_url(); ?>template/js/easypiechart.js"></script>
+<script src="<?php echo base_url(); ?>template/js/easypiechart-data.js"></script>
 <script src="<?php echo base_url(); ?>template/js/bootstrap-datepicker.js"></script>
-<script src="<?php echo base_url(); ?>template/js/custom.js"></script>
 <script>
 	$('#calendar').datepicker({
 	});

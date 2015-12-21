@@ -1,0 +1,20 @@
+/* Add Custom css here. */
+table.normal-text-wrap tr th, table.normal-text-wrap tr td{ white-space: normal !important;}
+
+@media (max-width: 767px){
+
+	.mob-hide-section{display: none;}
+}
+
+.edit-btn-ctm{
+	/*color: #FF0000;*/
+	/* width: 10%; */
+}
+.delete-btn-ctm{
+	color: #FF0000;
+	 width: 10%; 
+}
+.delete-btn-ctm:hover{
+	color: #FF0000;
+	 width: 11%; 
+}

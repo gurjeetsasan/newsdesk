@@ -5,7 +5,6 @@ class Admin extends CI_Controller {
 
 	function __construct(){
     	parent::__construct();
-      $this->load->model('WebServices');   
   	}
 
   	function index(){
@@ -36,8 +35,6 @@ class Admin extends CI_Controller {
             
             $data['page_name']  = 'user_list';
             $data['page_title'] = 'User List';
-
-            $data['userList']   = $this->WebServices->getAllUsers();            
 
             $this->load->view('admin/index', $data);
 
