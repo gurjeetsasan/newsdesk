@@ -18,3 +18,7 @@ table.normal-text-wrap tr th, table.normal-text-wrap tr td{ white-space: normal 
 	color: #FF0000;
 	 width: 11%; 
 }
+
+.text-center-align{
+	text-align: center;
+}

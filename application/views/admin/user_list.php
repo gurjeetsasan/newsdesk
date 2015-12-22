@@ -1,11 +1,3 @@
-
-<?php  
-	
-	// echo "<pre>";
-	// print_r( $userList );
-	// echo "</pre>";
-?>
-
 <div class="row">
 	<div class="col-xs-12">
   		<div class="table-responsive">
@@ -29,8 +21,8 @@
 			      				echo "<td class='mob-hide-section'>".$data->password."</td>";
 			      				echo "<td class='mob-hide-section'>".$data->language."</td>";
 			      				echo '<td>
-			      							<a href="#" class="edit-btn-ctm"><i class="fa fa-pencil-square-o"></i></a>&nbsp;
-			      							&nbsp;<a href="#" class="delete-btn-ctm"><i class="fa fa-trash"></i></a> &nbsp;
+			      							<a href="'.base_url().'index.php/admin/update_user/'.$data->userId.'" class="edit-btn-ctm"><i class="fa fa-pencil-square-o"></i></a>&nbsp;
+			      							&nbsp;<a onclick="return confirm(\'Are you sure you want to Remove User?\');" href="'.base_url().'index.php/admin/user_list/delete/'.$data->userId.'" class="delete-btn-ctm"><i class="fa fa-trash"></i></a> &nbsp;
 										</td>';
 			      			echo "</tr>";
 			      		}
