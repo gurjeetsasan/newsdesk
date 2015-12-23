@@ -53,9 +53,7 @@ Class WebServices extends CI_Model{
 
 	/* get the list of user publicaltion. */
 	function getPublications( $userID ){
-		$url 	= 'http://iris.scanmine.com:8090/getpubs?uid='.$userID."&keyword=";	
-		$result = $this->getCurl( $url );
-		return $result;
+
 	}
 
 	/*function to udpate existing user */

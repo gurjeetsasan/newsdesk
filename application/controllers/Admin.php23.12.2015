@@ -40,21 +40,22 @@ class Admin extends CI_Controller {
 
             /*check if user want to delete. */
             if( $action == 'delete' ){
-                   
+                   echo "delete"; 
+
                    if( $userID == null ){
-                        $data['message']        = 'Error! User ID not Found.';
-                        $data['message_type']   =  "success";
+                        $data['message'] = 'Error! User ID not Found.';
                    }else{
                         
                         $result =  $this->WebServices->deleteUser( $userID );
                         if( $result ){
-                            $data['message']        =  "User Deleted Successfully.";
-                            $data['message_type']   =  "success";
+                            $data['message']  =  "User Deleted Successfully.";
                         }else{
-                            $data['message']        =  "Error! Deleting User.";                    
-                            $data['message_type']   =  "error";
+                            $data['message']  =  "Error! Deleting User.";                    
                         }
                    }
+
+                   echo  $data['message'];   
+                   die;
             }
 
             $data['userList']   = $this->WebServices->getAllUsers();            
@@ -146,36 +147,7 @@ class Admin extends CI_Controller {
             redirect('login/admin', 'refresh');
         }
     }
-
-
-    /*function to get the list of publications. */
-    function view_publication( $userID = null ){
-
-        if( $this->session->userdata('logged_in')){
-            $session_data       = $this->session->userdata('logged_in');
-
-            $data['username']   = $session_data['username'];
-            $data['type']       = $session_data['type'];
-            
-            $data['page_name']  = 'view_publication';
-            $data['page_title'] = 'View Publication';
-
-            if( $userID == null ){
-               redirect('admin/user_list', 'refresh');
-            }
-
-            $data['userPublication']   = $this->WebServices->getPublications( $userID );    
-
-            $this->load->view('admin/index', $data);
-
-        }else{
-
-            //If no session, redirect to login page
-            redirect('login/admin', 'refresh');
-        }
-
-    }
-
+  	
   	/*function for logout */
   	function logout(){
     	$this->session->unset_userdata('logged_in');
