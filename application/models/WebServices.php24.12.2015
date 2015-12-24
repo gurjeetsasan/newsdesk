@@ -73,6 +73,7 @@ Class WebServices extends CI_Model{
 		}		
 	}
 
+
 	function getCurl( $url ){
 		// echo  $url = 'http://iris.scanmine.com:8090/users?keyword=';	
 		// $url 	=	"http://iris.scanmine.com:8090/getpubtempl?lang=en";
