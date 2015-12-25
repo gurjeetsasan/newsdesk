@@ -129,7 +129,7 @@ class Login extends CI_Controller {
                 $data['message']        =  "User Registered Successfully.";
                 $data['message_type']   = 'success';
             }else{
-                $data['message']        =  "Error! User not Created. Please try again later.";
+                $data['message']        =  "User is already registered!";
                 $data['message_type']   = 'error';
             }
 
