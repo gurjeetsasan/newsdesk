@@ -14,8 +14,8 @@ $lang['register'] 	= 'Registrera';
 
 $lang['user_id ']  	= 'användar ID';
 $lang['email']		= 'E-post';
-$lang['password']   = 'Lösenord';
-$lang['language']   = 'språk';
+$lang['password']   = 'Password';
+$lang['language']   = 'Lösenord';
 $lang['actions']  	= 'Handlingar';
 
 $lang['captcha'] 	= 'Captcha';
@@ -43,14 +43,3 @@ $lang['sales_leads'] 	= 'Leads';
 
 $lang['delete_publication'] 	= 'Radera publikation';
 $lang['no_publications_found'] 	= 'Inga publikationer hittades!';
-
-//user
-$lang['add_publication'] = 'Lägg Publikation';
-$lang['create_a_publication'] = 'Skapa en publikation';
-$lang['topics'] = 'ämnen';
-$lang['create_publication'] = 'Skapa Publikation';
-$lang['select_topic'] = 'Välj ämne';
-$lang['id'] = 'ID';
-$lang['view_publication'] = 'Se publikationen';
-$lang['action'] = 'Handling';
-$lang['user_list'] = 'Användarlista';

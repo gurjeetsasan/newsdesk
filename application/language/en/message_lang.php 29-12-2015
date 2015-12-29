@@ -41,16 +41,7 @@ $lang['sales_leads'] 		= 'Sales leads';
 $lang['delete_publication'] = 'Delete publication';
 
 $lang['no_publications_found'] = 'No Publications Found!';
-//user
-$lang['add_publication'] = 'Add Publication';
-$lang['create_a_publication'] = 'Create a Publication';
-$lang['topics'] = 'Topics';
-$lang['create_publication'] = 'Create Publication';
-$lang['select_topic'] = 'Select Topic';
-$lang['id'] = 'ID';
-$lang['view_publication'] = 'View Publication';
-$lang['action'] = 'Action';
-$lang['user_list'] = 'User List';
 
 
+//
 

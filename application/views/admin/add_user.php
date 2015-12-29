@@ -1,6 +1,8 @@
 <div class="row">
 	<div class="col-xs-12 col-sm-6 col-sm-push-3 col-md-6 col-md-push-3 col-lg-6 col-lg-push-3">
-		
+		<?php $message 		= $this->session->flashdata('message'); ?>
+		<?php $message_type = $this->session->flashdata('message_type'); ?>
+
 		<?php if(isset( $message) ): ?>
 			
 			<?php if( $message_type == 'success' ): ?>			
@@ -23,26 +25,26 @@
 			</div> -->
 			
 			<div class="form-group">
-				<label for="uid"><?php echo get_phrase('email') ?></label>
-				<input type="email" required="" placeholder="<?php echo get_phrase('email') ?>" name="email" class="form-control" required />
+				<label for="uid">Email</label>
+				<input type="email" required="" placeholder="email" name="email" class="form-control" required />
 			</div>	
 
 	
 			<div class="form-group">
-				<label for="password"><?php echo get_phrase('password') ?></label>
-				<input type="text" required="" placeholder="<?php echo get_phrase('password') ?>" name="password" class="form-control" required />
+				<label for="password">Password</label>
+				<input type="text" required="" placeholder="password" name="password" class="form-control" required />
 			</div>
 			<div class="form-group">
-				<label for="lang"><?php echo get_phrase('language') ?></label>
+				<label for="lang">Language</label>
 				<select required="" placeholder="Choose language" class="form-control" name="lang" required>
-				 	<option value=""><?php echo get_phrase('select_language') ?></option>
-				 	<option value="en"><?php echo get_phrase('english') ?></option>
-				  	<option value="no"><?php echo get_phrase('norwegian') ?></option>
-				  	<option value="se"><?php echo get_phrase('swedish') ?></option>
+				 	<option value="">Select Language</option>
+				 	<option value="en">English</option>
+				  	<option value="no">Norwegian</option>
+				  	<option value="se">Swedish</option>
 				</select>
 			</div>
 			<input type="hidden" name="action" value="ACTION_CREATE" >
-			<input class="btn btn-primary" type="submit" value="<?php echo get_phrase('add_new_user') ?>" />
+			<input class="btn btn-primary" type="submit" value="Add New User" />
 		</form>
 	</div>
 </div><!--/.row-->

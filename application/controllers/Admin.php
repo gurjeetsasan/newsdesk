@@ -188,6 +188,10 @@ class Admin extends CI_Controller {
   	/*function for logout */
   	function logout(){
     	$this->session->unset_userdata('logged_in');
+
+        $this->session->set_flashdata('flashMessage', 'Logged off Successfully!');
+        $this->session->set_flashdata('flashMessageType', 'success');
+
     	redirect('login/admin', 'refresh');
   	}
 

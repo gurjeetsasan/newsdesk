@@ -44,14 +44,3 @@ $lang['delete_publication'] = 'Slett publikasjon';
 
 
 $lang['no_publications_found'] = 'Ingen publikasjoner funnet!';
-
-//user
-$lang['add_publication'] = 'Legg Publication';
-$lang['create_a_publication'] = 'Lag en publikasjon';
-$lang['topics'] = 'emner';
-$lang['create_publication'] = 'Lag Publication';
-$lang['select_topic'] = 'Velg Emne';
-$lang['id'] = 'ID';
-$lang['view_publication'] = 'Vis publikasjon';
-$lang['action'] = 'Handling';
-$lang['user_list'] = 'Liste over brukere';

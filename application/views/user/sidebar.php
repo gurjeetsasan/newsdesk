@@ -5,9 +5,9 @@
 		</div>
 	</form> -->	
 	<ul class="nav menu">
-		<li class="<?php echo ($page_name == 'dashboard') ? 'active' : '' ; ?>"><a href="<?php echo base_url();?>index.php/admin"><svg class="glyph stroked dashboard-dial"><use xlink:href="#stroked-dashboard-dial"></use></svg> Dashboard</a></li>
-		<li class="<?php echo ($page_name == 'user_list') ? 'active' : '' ; ?>"><a href="<?php echo base_url();?>index.php/admin/user_list"><svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg> All Users</a></li>
-		<li class="<?php echo ($page_name == 'add_user') ? 'active' : '' ; ?>"><a href="<?php echo base_url();?>index.php/admin/add_user"><svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg> Add User</a></li>
+		<li class="<?php echo ($page_name == 'dashboard') ? 'active' : '' ; ?>"><a href="<?php echo base_url();?>index.php/user"><svg class="glyph stroked dashboard-dial"><use xlink:href="#stroked-dashboard-dial"></use></svg> Dashboard</a></li>
+		<li class="<?php echo ($page_name == 'view_publication') ? 'active' : '' ; ?>"><a href="<?php echo base_url();?>index.php/user/view_publication"><svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg> View Publication </a></li>
+		<li class="<?php echo ($page_name == 'add_publication') ? 'active' : '' ; ?>"><a href="<?php echo base_url();?>index.php/user/add_publication"><svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg> Add Publication</a></li>
 	</ul>
 
 </div><!--/.sidebar-->

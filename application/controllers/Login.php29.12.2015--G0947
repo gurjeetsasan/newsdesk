@@ -39,9 +39,7 @@ class Login extends CI_Controller {
 				redirect( 'admin', 'refresh' );
 			}else{
 
-				$this->session->set_flashdata('flashMessage', 'Invalid username or Password.');
-            	$this->session->set_flashdata('flashMessageType', 'error');
-            	
+				$this->session->set_flashdata('error_message', 'Invalid username or Password.');
 				redirect( 'login/admin', 'refresh' );
 			}
 
@@ -52,9 +50,7 @@ class Login extends CI_Controller {
 				redirect( 'user', 'refresh' );
 			}else{
 
-				$this->session->set_flashdata('flashMessage', 'Invalid username or Password.');
-            	$this->session->set_flashdata('flashMessageType', 'error');
-
+				$this->session->set_flashdata('error_message', 'Invalid username or Password.');
 				redirect( 'login/index', 'refresh' );
 			}
 		}
@@ -86,11 +82,6 @@ class Login extends CI_Controller {
   	/* function for user login */
   	function processUserLogin($username, $password){
   		//query the database
-
-  		if( empty($username) || empty($password)){
-  			return false;
-  		}
-  		
     	$result = $this->user->userLogin($username, $password);
 
 		if($result){
@@ -158,8 +149,8 @@ class Login extends CI_Controller {
             redirect('login/register', 'refresh');
             // echo  $data['message'];
 		}else{
-		   		$this->session->set_flashdata('flashMessage', 'Sorry Google Recaptcha Unsuccessful!!');
-            	$this->session->set_flashdata('flashMessageType', 'error');
+		   	$this->session->set_flashdata('flashMessage', 'Sorry Google Recaptcha Unsuccessful!!');
+            		$this->session->set_flashdata('flashMessageType', 'error');
 
 		   	redirect('login/register', 'refresh');
 		}

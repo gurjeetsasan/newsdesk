@@ -23,13 +23,33 @@
       <div class="login-panel panel panel-default">
         <div class="panel-heading"><?php echo get_phrase('log_in') ?></div>
         <div class="panel-body">
+        
+          <!-- Response Message. -->       
+          <?php $message    = $this->session->flashdata('flashMessage'); ?>
+          <?php $message_type = $this->session->flashdata('flashMessageType'); ?>
+
+          <?php if(isset( $message) ): ?>                
+              <?php if( $message_type == 'success' ): ?>      
+                <div class="alert bg-success alert-message" role="alert">
+                  <svg class="glyph stroked checkmark"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#stroked-checkmark"></use></svg> <?php echo $message;?> <a href="#" class="pull-right"><span class="glyphicon glyphicon-remove"></span></a>
+                </div>        
+              <?php endif; ?>
+              <?php if( $message_type == 'error' ): ?>      
+                <div class="alert bg-danger alert-message" role="alert">
+                  <svg class="glyph stroked cancel"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#stroked-cancel"></use></svg> <?php echo $message;?> <a href="#" class="pull-right"><span class="glyphicon glyphicon-remove"></span></a>
+                </div>
+              <?php endif; ?>
+          <?php endif; ?>
+          <!-- Response Message. -->
+
+
           <?php echo form_open('login/checkLogin'); ?>
             <fieldset>
               <div class="form-group">
-                <input class="form-control" placeholder="<?php echo get_phrase('username') ?>" name="username" type="text" autofocus="">
+                <input class="form-control" placeholder="<?php echo get_phrase('username') ?>" name="username" type="text" autofocus="" required />
               </div>
               <div class="form-group">
-                <input class="form-control" placeholder="<?php echo get_phrase('password') ?>" name="password" type="password" value="">
+                <input class="form-control" placeholder="<?php echo get_phrase('password') ?>" name="password" type="password" value="" required />
               </div>  
               <input type="hidden" name="type" value="admin" />           
               <input type="submit" class="btn btn-primary" value="Login"/>
@@ -39,32 +59,14 @@
         </div>
       </div>
     </div><!-- /.col-->
-  </div><!-- /.row -->  
+  </div><!-- /.row   -->
   
-    
+  <!-- Footer section  -->
 
   <script src="<?php echo base_url(); ?>template/js/jquery-1.11.1.min.js"></script>
-  <script src="<?php echo base_url(); ?>template/js/bootstrap.min.js"></script>
-  <script src="<?php echo base_url(); ?>template/js/chart.min.js"></script>
-  <script src="<?php echo base_url(); ?>template/js/chart-data.js"></script>
-  <script src="<?php echo base_url(); ?>template/js/easypiechart.js"></script>
-  <script src="<?php echo base_url(); ?>template/js/easypiechart-data.js"></script>
-  <script src="<?php echo base_url(); ?>template/js/bootstrap-datepicker.js"></script>
-  <!--<script>
-    !function ($) {
-      $(document).on("click","ul.nav li.parent > a > span.icon", function(){      
-        $(this).find('em:first').toggleClass("glyphicon-minus");    
-      }); 
-      $(".sidebar span.icon").find('em:first').addClass("glyphicon-plus");
-    }(window.jQuery);
+  <script src="<?php echo base_url(); ?>template/js/bootstrap.min.js"></script>  
+  <script src="<?php echo base_url(); ?>template/js/custom.js"></script>  
 
-    $(window).on('resize', function () {
-      if ($(window).width() > 768) $('#sidebar-collapse').collapse('show')
-    })
-    $(window).on('resize', function () {
-      if ($(window).width() <= 767) $('#sidebar-collapse').collapse('hide')
-    })
-  </script> -->
 </body>
 
 </html>
