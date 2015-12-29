@@ -14,7 +14,7 @@
 					<ul class="dropdown-menu" role="menu"><!-- 
 						<li><a href="#"><svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg> Profile</a></li>
 						<li><a href="#"><svg class="glyph stroked gear"><use xlink:href="#stroked-gear"></use></svg> Settings</a></li> -->
-						<li><a href="<?php echo base_url();?>/index.php/admin/logout"><svg class="glyph stroked cancel"><use xlink:href="#stroked-cancel"></use></svg> Logout</a></li>
+						<li><a href="<?php echo base_url();?>/index.php/admin/logout"><svg class="glyph stroked cancel"><use xlink:href="#stroked-cancel"></use></svg><?php echo get_phrase('logout') ?> </a></li>
 					</ul>
 				</li>
 			</ul>

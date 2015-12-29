@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Scanmine Rest Login.</title>
+  </head>
+  <body>
+    <h1>Scanmine Rest Login1.</h1>
+
+        <?php
+          echo "<h2>".$this->session->flashdata('error_message')."</h2>";
+        ?>
+
+      <?php echo form_open('login/checkLogin'); ?>
+      <label for="username">Username:</label>
+      <input type="text" size="20" id="username" name="username"/>
+      <br/>
+      <label for="password">Password:</label>
+      <input type="password" size="20" id="passowrd" name="password"/>
+      <br/>
+      <input type="hidden" name="type" value="admin" />
+
+      <input class="btn btn-primary" type="submit" value="Login"/>
+    </form>
+  </body>
+</html>

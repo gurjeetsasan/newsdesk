@@ -22,27 +22,27 @@
 
 		<form role="form" method="POST" action="<?php echo base_url();?>index.php/admin/update_user/create">
 			<div class="form-group">
-				<label for="uid">User ID</label>
-				<input type="text" required="" placeholder="User Id" name="uid" class="form-control" value="<?php echo $user->userId; ?>" readonly />
+				<label for="uid"><?php echo get_phrase('user_id') ?></label>
+				<input type="text" required="" placeholder="<?php echo get_phrase('user_id') ?>" name="uid" class="form-control" value="<?php echo $user->userId; ?>" readonly />
 			</div>
 			
 			<div class="form-group">
-				<label for="uid">email</label>
-				<input type="text" required="" placeholder="email" name="email" class="form-control" value="<?php echo $user->email; ?>" />
+				<label for="uid"><?php echo get_phrase('email') ?></label>
+				<input type="text" required="" placeholder="<?php echo get_phrase('email') ?>" name="email" class="form-control" value="<?php echo $user->email; ?>" />
 			</div>	
 
 	
 			<div class="form-group">
-				<label for="password">Password</label>
-				<input type="text" required="" placeholder="password" name="password" class="form-control" value="<?php echo $user->password; ?>" >
+				<label for="password"><?php echo get_phrase('password') ?></label>
+				<input type="text" required="" placeholder="<?php echo get_phrase('password') ?>" name="password" class="form-control" value="<?php echo $user->password; ?>" >
 			</div>
 			<div class="form-group">
-				<label for="lang">Language</label>
+				<label for="lang"><?php echo get_phrase('language') ?></label>
 				<select required="" placeholder="Choose language" class="form-control" name="lang">
-				 	<option value="">Select Language</option>
-				 	<option value="en"  <?php echo ($user->language == 'en') ? 'selected' : '' ; ?> >English</option>
-				  	<option value="no" <?php echo ($user->language == 'no') ? 'selected' : '' ; ?> >Norwegian</option>
-				  	<option value="se" <?php echo ($user->language == 'se') ? 'selected' : '' ; ?> >Swedish</option>
+				 	<option value=""><?php echo get_phrase('select_language') ?></option>
+				 	<option value="en"  <?php echo ($user->language == 'en') ? 'selected' : '' ; ?> ><?php echo get_phrase('english') ?></option>
+				  	<option value="no" <?php echo ($user->language == 'no') ? 'selected' : '' ; ?> ><?php echo get_phrase('norwegian') ?></option>
+				  	<option value="se" <?php echo ($user->language == 'se') ? 'selected' : '' ; ?> ><?php echo get_phrase('swedish') ?></option>
 				</select>
 			</div>
 			<input type="hidden" name="action" value="ACTION_UPDATE" >

@@ -17,11 +17,11 @@
     		<table class="table table-bordered table-hover normal-text-wrap">          
       			<thead>
 			    	<tr>
-			      		<th class="mob-hide-section">User ID</th>
-			      		<th>Email</th>
-			      		<th class="mob-hide-section">Password</th>
-			      		<th class="mob-hide-section">Language</th>
-			      		<th>Actions</th>
+			      		<th class="mob-hide-section"><?php echo get_phrase('user_id') ?></th>
+			      		<th><?php echo get_phrase('email') ?></th>
+			      		<th class="mob-hide-section"><?php echo get_phrase('password') ?></th>
+			      		<th class="mob-hide-section"><?php echo get_phrase('language') ?></th>
+			      		<th><?php echo get_phrase('actions') ?></th>
 			    	</tr>
 			  	</thead>
 		      	<tbody>

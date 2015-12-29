@@ -5,13 +5,22 @@ class Admin extends CI_Controller {
 
 	function __construct(){
     	parent::__construct();
-      $this->load->model('WebServices');   
+        $this->load->model('WebServices');
+
+        if( $this->session->userdata('logged_in')){
+            $session_data   = $this->session->userdata('logged_in');
+            $lang           = $session_data['lang'];
+            $this->lang->load('message', $lang);
+        }else{
+            $this->lang->load('message');
+        }
   	}
 
   	function index(){
-      	if( $this->session->userdata('logged_in')){
-            $session_data       = $this->session->userdata('logged_in');
 
+        if( $this->session->userdata('logged_in')){
+            $session_data       = $this->session->userdata('logged_in');
+            
             $data['username']   = $session_data['username'];
             $data['type']       = $session_data['type'];
             

@@ -5,9 +5,9 @@
       			<thead>
 			    	<tr>
 			      		<th class="mob-hide-section">ID</th>
-			      		<th>Publication Title</th>
-			      		<th class="mob-hide-section">Language</th>
-			      		<th>Actions</th>
+			      		<th><?php echo get_phrase('publication_title') ?></th>
+			      		<th class="mob-hide-section"><?php echo get_phrase('language') ?></th>
+			      		<th><?php echo get_phrase('actions') ?></th>
 			    	</tr>
 			  	</thead>			  	
 		      	<tbody>
@@ -20,7 +20,7 @@
 				      				echo "<td class='mob-hide-section'>".$data->id."</td>";
 				      				echo "<td>".$data->title."</td>";			      				
 				      				echo "<td class='mob-hide-section'>".$data->lang."</td>";
-				      				echo '	<td>
+				      				echo '<td>
 				      							<div class="btn-group">
 											      <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#">
 											        Action

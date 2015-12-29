@@ -5,7 +5,16 @@ class User extends CI_Controller {
 
 	function __construct(){
     	parent::__construct();
-        $this->load->model('WebServices');   
+        $this->load->model('WebServices'); 
+
+
+      if( $this->session->userdata('logged_in')){
+            $session_data   = $this->session->userdata('logged_in');
+            $lang           = $session_data['lang'];
+            $this->lang->load('message', $lang);
+      }else{
+          $this->lang->load('message');
+      } 
   	}
 
   	function index(){
@@ -15,13 +24,12 @@ class User extends CI_Controller {
             //If no session, redirect to login page
             if( $session_data['type'] !== 'user'){
                 redirect('login', 'refresh');
-            }
-
+            }            
             $data['username']   = $session_data['username'];
             $data['type']       = $session_data['type'];
             
             $data['page_name']  = 'dashboard';
-            $data['page_title'] = 'Dashboard';
+            $data['page_title'] = 'dashboard';
 
             $this->load->view('user/index', $data);
 

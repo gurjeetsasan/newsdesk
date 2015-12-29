@@ -7,7 +7,15 @@ class Login extends CI_Controller {
     	$this->load->helper('form');   
     	$this->load->library('curl'); 	
     	$this->load->model('user');
-    	$this->load->model('WebServices');    	
+    	$this->load->model('WebServices');
+
+    	if( $this->session->userdata('logged_in')){
+            $session_data   = $this->session->userdata('logged_in');
+            $lang           = $session_data['lang'];
+            $this->lang->load('message', $lang);
+        }else{
+            $this->lang->load('message');
+        }
   	}
 
   	function index(){    	
@@ -60,6 +68,7 @@ class Login extends CI_Controller {
 				$sess_array = array(
 					'id' => $row->id,
 					'username' 	=> $row->username,
+					'lang' 		=> $row->lang,
 					'type' 		=> 'admin'
 				);
 				$this->session->set_userdata('logged_in', $sess_array);
@@ -81,6 +90,7 @@ class Login extends CI_Controller {
 			$sess_array = array(
 					'id' => $result['id'],
 					'username' 	=> $result['username'],
+					'lang' 	=> $result['lang'],
 					'type' 		=> 'user'
 				);
 			$this->session->set_userdata('logged_in', $sess_array);
@@ -129,7 +139,7 @@ class Login extends CI_Controller {
                 $data['message']        =  "User Registered Successfully.";
                 $data['message_type']   = 'success';
             }else{
-                $data['message']        =  "User is already registered!";
+                $data['message']        =  "Error! User not Created. Please try again later.";
                 $data['message_type']   = 'error';
             }
 
@@ -151,7 +161,7 @@ class Login extends CI_Controller {
   	/*function for logout */
   	function logout(){
     	$this->session->unset_userdata('logged_in');
-    	redirect('home', 'refresh');
+    	redirect('login', 'refresh');
   	}/*user*/
 
 
